@@ -1,0 +1,14 @@
+nav{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+h1{
+    color: grey;
+}
+.logo{
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
