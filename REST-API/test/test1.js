@@ -70,9 +70,9 @@ let id;
 
   describe("/:id",() => {
     it("It should get a task by id", (done) => {
-      const id=3;
+      
         chai.request(server)
-        .get("/" + id)
+        .get("/" + userID)
         .end((err, response) => {
               response.should.have.status(200);
               response.body.should.be.an('object');
@@ -96,7 +96,7 @@ let id;
     it("DELETE Users Data", (done) => {
 
         chai.request(server)
-        .delete('/5')
+        .delete("/" + userID)
         .end((err, response) => {
             response.should.have.status(200);
             console.log(response.body);
