@@ -17,9 +17,9 @@ let id;
 
            id={
         
-            FirstName: "mitali",
-            LastName: "mahajan",
-            email: "shreyas.i@bluepineapple.io"
+            FirstName: "demofirstname",
+            LastName: "demolatname",
+            email: "demo@bluepineapple.io"
           };
 
       })
