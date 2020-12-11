@@ -166,5 +166,5 @@ router.put('/update/:id' , (req , res) => {
 
 
 
-
+module.exports = 
 module.exports = router
