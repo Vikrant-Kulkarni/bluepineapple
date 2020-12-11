@@ -2,7 +2,7 @@
   let chai = require ("chai");
   let chaiHttp = require ("chai-http");
   let server = require ("../index");
-let id;
+  let id;
 
   chai.should();
 
@@ -24,9 +24,15 @@ let id;
 
       })
 
-      after(function() {
-        console.log("........After Test Ended.............")
-    })
+      beforeEach(()=>{
+        console.log("................Test case Started.......................")
+      })
+
+      afterEach(()=>{
+        console.log("................Test case Ended.......................")
+      })
+
+   //......................................Add User....................................................  
 
 
 
@@ -41,13 +47,14 @@ let id;
                 response.body.should.be.an('object');
                 userID = response.body.data.insertId
                 console.log(userID);
-                //  response.body.should.have.property('LastName').eq(pillai);
+               
                 console.log(response.body);
             done();
             });
         });
       });
     
+   //......................................Get All Users....................................................  
 
 
 
@@ -66,7 +73,7 @@ let id;
     });
 
 
-  // ...................................................................
+   //......................................Get  User By Specific id....................................................  
 
   describe("/:id",() => {
     it("It should get a task by id", (done) => {
@@ -87,24 +94,26 @@ let id;
     
   });
 
-  //..................................................................................
 
 
-  //......................................................................................
+     //......................................delete User....................................................  
 
-  describe("Delete User",() => {
-    it("DELETE Users Data", (done) => {
-
-        chai.request(server)
-        .delete("/" + userID)
-        .end((err, response) => {
-            response.should.have.status(200);
-            console.log(response.body);
-        done();
-        });
+  after(function() {
+    describe("Delete User",() => {
+      it("DELETE Users Data", (done) => {
+  
+          chai.request(server)
+          .delete("/" + userID)
+          .end((err, response) => {
+              response.should.have.status(200);
+              console.log(response.body);
+          done();
+          });
+      });
     });
-  });
-
+  
+})
+  
 
   });
  
